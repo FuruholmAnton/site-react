@@ -1,0 +1,61 @@
+@import '../../css/_utils.css';
+
+.main {
+    justify-content: flex-end;
+}
+
+.content {
+    @media (--small) {
+        width: 100%;
+        flex: 1;
+    }
+}
+
+.greeting {
+    font-size: vw-column(6);
+    font-weight: 500;
+    margin: 0;
+    color: #585858;
+
+    @media (--small) {
+        font-size: vw-column(3);
+    }
+}
+
+.bio {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #fff;
+    margin: 0;
+
+    @media (--small) {
+        margin: 0 0 1em 0;
+        font-size: vw-column(0.7);
+    }
+
+    &-extra {
+        color: #95989A;
+        font-family: var(--font-serif);
+    }
+}
+
+.email {
+    display: none;
+
+    @media (--small) {
+        display: inline-block;
+        color: #95989A;
+        font-weight: 300;
+        font-size: vw-column(0.4);
+        text-decoration: none;
+        line-height: 1;
+        margin-bottom: -2px;
+        
+        align-self: flex-end;
+        transition: color 0.4s ease;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}

@@ -1,0 +1,9 @@
+# General stuff
+.sass-cache
+.DS_Store
+.vscode
+
+yarn-error.log
+yarn.lock
+
+node_modules

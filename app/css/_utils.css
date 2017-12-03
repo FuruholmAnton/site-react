@@ -1,0 +1,24 @@
+
+:root {
+    --fontSize: 1rem;
+    --header-link-color: #95989A;
+
+    --font-serif: 'Playfair Display', "Times New Roman", Times, serif;
+    --font-san-serif: 'Helvetica Neue', Helvetica, sans-serif;
+
+    --xsmall  : 320px;
+    --small   : 768px;
+    --medium  : 1024px;
+    --large   : 1200px;
+    --xlarge  : 1400px;
+    --xxlarge : 1500px;
+    --huge    : 1600px;
+
+    --background-main: #fff;
+}
+
+@custom-media --xsmall (width > 320px);
+@custom-media --small (width > 768px);
+@custom-media --small-max (width <= 768px);
+@custom-media --medium (width > 1024px);
+@custom-media --large (width > 1200px);

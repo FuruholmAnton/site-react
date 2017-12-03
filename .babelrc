@@ -1,0 +1,17 @@
+{
+  "presets": [
+    "es2015",
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7"]
+      }
+    }]
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-decorators",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread",
+    "transform-react-jsx"
+  ]
+}
