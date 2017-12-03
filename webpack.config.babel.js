@@ -47,38 +47,26 @@ const rules = [
     ...loaders,
     {
         test: /\.css$/,
-        use: [
-            // 'style-loader',
-            {
-                loader: 'file-loader',
-                options: {
-                    name: __DEV__ ? '[name].css' : '[name].[hash].css',
-                    // context: './app/css/',
-                    outputPath: './',
-                    publicPath: '../',
-                    sourceMap: __DEV__
-                }
-            },
-            {
-                loader: 'extract-loader',
-                options: {
-                    sourceMap: __DEV__
-                }
-            },
-            {
-                loader: 'css-loader',
-                options: {
-                    sourceMap: __DEV__
-                }
-            },
-            {
-                loader: 'resolve-url-loader',
-                options: {
-                    sourceMap: __DEV__
-                }
-            },
-            postCSSLoader,
-        ]
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+                {
+                    loader: 'css-loader',
+                    options: {
+                        sourceMap: __DEV__,
+                        minimize: !__DEV__,
+                    }
+                },
+                {
+                    loader: 'resolve-url-loader',
+                    options: {
+                        sourceMap: __DEV__
+                    }
+                },
+                postCSSLoader,
+            ]
+        })
+        
     },
     {
         test: /\.sss$/,
@@ -135,7 +123,7 @@ var config = {
         // extractSCSS,
 
         new ExtractTextPlugin({
-			filename: 'style.css',
+			filename: 'style.[hash].css',
 			allChunks: true
 		}),
 
@@ -210,17 +198,7 @@ else {
 
             ...config.plugins,
 
-            new UglifyJSPlugin({
-                compress: {
-                    warnings: false,
-                    screw_ie8: true,
-                    drop_console: true,
-                    drop_debugger: true,
-                },
-                output: {
-                    comments: false,
-                }
-            }),
+            new UglifyJSPlugin(),
             new webpack.optimize.OccurrenceOrderPlugin(),
             // new OfflinePlugin()
         ],
