@@ -7,7 +7,7 @@ import WebpackAssetsManifest from 'webpack-assets-manifest';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
-// import OfflinePlugin from 'offline-plugin';
+import OfflinePlugin from 'offline-plugin';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -200,7 +200,7 @@ else {
 
             new UglifyJSPlugin(),
             new webpack.optimize.OccurrenceOrderPlugin(),
-            // new OfflinePlugin()
+            new OfflinePlugin()
         ],
 
         performance: {
