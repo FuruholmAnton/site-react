@@ -8,6 +8,8 @@ import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
+import GoogleFontsPlugin from 'google-fonts-webpack-plugin';
+import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin';
 
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -39,9 +41,12 @@ const postCSSLoader = {
                 }
             }),
             require('stylefmt'),
+            require('cssnano'),
         ],
     }
 };
+
+if (!__DEV__) postCSSLoader.options.plugins.push(require('cssnano'));
 
 const rules = [
     ...loaders,
@@ -119,23 +124,33 @@ var config = {
         extensions: ['.js', '.jsx', '.json']
     },
     plugins: [
+        new WebpackCleanupPlugin(), // cleans build folder
         // new webpack.LoaderOptionsPlugin(),
         // extractSCSS,
 
         new ExtractTextPlugin({
 			filename: 'style.[hash].css',
 			allChunks: true
-		}),
+        }),
 
         new HtmlWebpackPlugin({
             inject: true,
             template: 'app/index.html',
+            inlineSource: '.(sss|css)$',
         }),
+        new HtmlWebpackInlineSourcePlugin(),
 
         // Set global variables in JS
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(__DEV__)
         }),
+
+        // new GoogleFontsPlugin({
+		// 	fonts: [
+		// 		{ family: "Playfair Display", variants: [ "400" ] },
+		// 	]
+		// 	/* ...options */
+		// })
 
         // new webpack.optimize.CommonsChunkPlugin({
         //     name: 'common',
@@ -188,11 +203,10 @@ else {
     completeConfig = {
         ...config,
         plugins: [
-            new WebpackCleanupPlugin(), // cleans build folder
 
             new webpack.DefinePlugin({
                 'process.env': {
-                    NODE_ENV: '"production"',
+                    NODE_ENV: JSON.stringify('production'),
                 }
             }),
 

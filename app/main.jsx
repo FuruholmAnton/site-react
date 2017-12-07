@@ -1,6 +1,10 @@
 import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 OfflinePluginRuntime.install();
 
+import galite from 'ga-lite'
+galite('create', 'UA-50142288-1', 'auto')
+galite('send', 'pageview')
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';

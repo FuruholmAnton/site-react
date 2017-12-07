@@ -1,0 +1,14 @@
+/* === Playfair Display - regular */
+@font-face {
+	font-family: 'Playfair Display';
+	font-style: normal;
+	font-weight: 400;
+	src: url("../font/PlayfairDisplay-Regular.eot");
+	src: local("Playfair Display Regular"),
+		local("PlayfairDisplay-Regular"),
+		url("../font/PlayfairDisplay-Regular.eot") format("embedded-opentype"),
+		url("../font/PlayfairDisplay-Regular.woff2") format("woff2"),
+		url("../font/PlayfairDisplay-Regular.woff") format("woff"),
+		url("../font/PlayfairDisplay-Regular.ttf") format("truetype"),
+		url("../font/PlayfairDisplay-Regular.svg") format("svg");
+}

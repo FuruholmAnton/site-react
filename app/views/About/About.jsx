@@ -18,11 +18,11 @@ export default class About extends Base {
 
                 <div className={s.copy}>
                     <p>
-                        I'm a Swedish web developer. My mainly work with HTML, CSS, JavaScript, PHP, WordPress, and React. 
+                        I'm a Swedish web developer. I mainly work with HTML, CSS, JavaScript, PHP, WordPress, and React. 
                     </p>
                     
                     <p>
-                        I work at Build in Amsterdam BV. where I many create E-Commerce websites. We work in smaller teams, usually of 1-4 developers, in close collaboration with the designer/s.
+                        I work at <a href="//www.buildinamsterdam.com">Build in Amsterdam BV</a>, where we build mainly E-Commerce websites. We work in smaller teams, usually of 1-4 developers, in close collaboration with the designer/s.
                     </p>
                 </div>
             </main>

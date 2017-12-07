@@ -1,8 +1,13 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/main.0e207d0159a585540ab3.js",
-      "/style.0e207d0159a585540ab3.css",
+      "/275cdeb1f4820a4162cadddbc4b2e278.eot",
+      "/203179d16cd511feb9d8691f27926c3b.woff2",
+      "/277557a1614d9ebf11d497c62d835f88.woff",
+      "/b9d5ca44583e9416ee1be00c590d02f1.ttf",
+      "/02e026b5ddf7001ae32e99b7a147d5c9.svg",
+      "/main.c226a40ae105de388bb9.js",
+      "/style.c226a40ae105de388bb9.css",
       "/"
     ],
     "additional": [],
@@ -10,13 +15,18 @@ var __wpo = {
   },
   "externals": [],
   "hashesMap": {
-    "3d710cf58ff70aa6481c0f819e6fc5e4c648b690": "/main.0e207d0159a585540ab3.js",
-    "c9b7730880e9cf30abf50087ed13fd75765584c3": "/style.0e207d0159a585540ab3.css",
-    "8be79603a6603afc66fe1e68120a432a6e75d8fd": "/"
+    "46859924fbc5d0130acf201eacd6fbc0ae9f221b": "/275cdeb1f4820a4162cadddbc4b2e278.eot",
+    "9b28944bc3e2a09a0824530ba7a3b59e59a065b8": "/203179d16cd511feb9d8691f27926c3b.woff2",
+    "db787380c258c15361dc0c6e241e96e184126d9e": "/277557a1614d9ebf11d497c62d835f88.woff",
+    "47c516d05547876cecacce169c3eceb118c24683": "/b9d5ca44583e9416ee1be00c590d02f1.ttf",
+    "6fae1b940bf76a8d034893232dbc151e88528bb3": "/02e026b5ddf7001ae32e99b7a147d5c9.svg",
+    "b51aa6ae99487f46db124a4480a5a9511936e60d": "/main.c226a40ae105de388bb9.js",
+    "b21ee2bc39a43b7278544096076e9539c186c42c": "/style.c226a40ae105de388bb9.css",
+    "1db77d3e9b7f2f47a6334a568ce72385f88920ce": "/"
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2017-12-3 21:29:59",
+  "version": "2017-12-6 22:47:37",
   "name": "webpack-offline",
   "pluginVersion": "4.8.4",
   "relativePaths": false

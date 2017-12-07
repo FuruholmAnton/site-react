@@ -1,6 +1,26 @@
+@import '_fonts';
 @import '_reset';
 @import '_normalize';
 @import '_utils';
+
+
+:root {
+    --fontSize: 1rem;
+    --header-link-color: #95989A;
+
+    --font-serif: 'Playfair Display', "Times New Roman", Times, serif;
+    --font-san-serif: 'Helvetica Neue', Helvetica, sans-serif;
+
+    --xsmall  : 320px;
+    --small   : 768px;
+    --medium  : 1024px;
+    --large   : 1200px;
+    --xlarge  : 1400px;
+    --xxlarge : 1500px;
+    --huge    : 1600px;
+
+    --background-main: #fff;
+}
 
 html,
 body {
@@ -79,6 +99,7 @@ p {
         display: none;
 
         @media (--small) {
+            display: inline-block;
             position: absolute;
             left: 100%;
             top: 50%;
@@ -179,7 +200,6 @@ p {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        // justify-content: center;
         align-items: center;
         width: vw-column(1.5);
         position: absolute;
